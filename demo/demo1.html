@@ -1,0 +1,225 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>canvas</title>
+	<style>
+		*{
+			margin: 0;
+			padding: 0;
+			box-sizing: border-box;
+		}
+		html,body{
+			height: 100%;
+			position: relative;
+			overflow: hidden;
+		}
+		#container{
+			width: 99%;
+			height: 97%;
+			border: 1px solid #ccc;
+			margin: 1% auto;
+			overflow: hidden;
+		}
+	</style>
+</head>
+<body>
+	<div id="container"></div>
+</body>
+<script src="../src/draw.js"></script>
+<script>
+	(function(){
+		var myCanvas = new Canvas({
+			selector: "#container"
+		});
+		myCanvas.init().drawRect({
+			point:{
+				x: 10,
+				y: 10,
+			},
+			width: 100,
+			height: 100,
+			fill: true,
+			fillStyle: "red",
+			strokeStyle: "red",
+			lineWidth: 5,
+			rotate: 10
+		}).drawLine({
+			start: {
+				x: 120,
+				y: 10
+			},
+			end: {
+				x: 300,
+				y: 40
+			},
+			lineWidth: 10,
+			fillStyle: "green",
+			strokeStyle: "green",
+			lineCap: "round"
+		}).drawRect({
+			point:{
+				x: 20,
+				y: 200,
+			},
+			width: 100,
+			height: 100,
+			fillStyle: "pink",
+			strokeStyle: "pink",
+			lineWidth: 3
+		}).drawCircle({
+			center: {
+				x: 300,
+				y: 300
+			},
+			r: 50,
+			start: 0,
+			end: 2*Math.PI,
+			fill: true,
+			fillStyle: "#0966e3",
+			strokeStyle: "#0966e3",
+		}).drawTriangle({
+			p1: {
+				x: 300,
+				y: 50
+			},
+			p2: {
+				x: 400,
+				y: 80
+			},
+			p3: {
+				x: 400,
+				y: 150
+			},
+			fill: true,
+			fillStyle: "#ccc",
+			strokeStyle: "#ccc",
+			lineWidth: 2,
+			lineCap: "round"
+		}).drawFPStar({
+			center: {
+				x: 500,
+				y: 200
+			},
+			width: 100,
+			fill: true,
+			fillStyle: "#0966e3",
+			strokeStyle: "#0966e3",
+			lineWidth: 2,
+			lineCap: "round",
+			rotate: 60,
+			empty: false
+		}).drawTriangle({
+			p1: {
+				x: 400,
+				y: 50
+			},
+			p2: {
+				x: 400,
+				y: 80
+			},
+			p3: {
+				x: 200,
+				y: 150
+			},
+			fill: true,
+			fillStyle: "#ccc",
+			strokeStyle: "#ccc",
+			lineWidth: 2,
+			lineCap: "round"
+		}).drawLightning({
+			// 起点
+			start: {
+				x: 100,
+				y: 500
+			},
+			// 长边
+			r: 200,
+			//短边
+			l: 60,
+			// 大角度
+			angle1: 60,
+			// 小角度
+			angle2: 10,
+			// 两短边的距离
+			h: 40,
+			// fill: true,
+			fillStyle: "red",
+			strokeStyle: "red",
+			lineWidth: 2,
+			lineCap: "round",
+		}).drawLine({
+			start: {
+				x: 220,
+				y: 20
+			},
+			end: {
+				x: 300,
+				y: 20
+			},
+			lineWidth: 10,
+			fillStyle: "green",
+			strokeStyle: "green",
+			lineCap: "round"
+		}).drawLightning({
+			// 起点
+			start: {
+				x: 200,
+				y: 500
+			},
+			// 长边
+			r: 200,
+			//短边
+			l: 90,
+			// 大角度
+			angle1: 40,
+			// 小角度
+			angle2: 40,
+			// 两短边的距离
+			h: 40,
+			// fill: true,
+			fillStyle: "red",
+			strokeStyle: "red",
+			lineWidth: 2,
+			lineCap: "round",
+		}).drawEllipse({
+			center: {
+				x: 500,
+				y: 400
+			},
+			a: 80,
+			b: 150,
+			angle: 360,
+			fillStyle: "green",
+			strokeStyle: "green",
+			lineCap: "round"
+		}).drawEllipse({
+			center: {
+				x: 400,
+				y: 400
+			},
+			a: 80,
+			b: 150,
+			angle: 110,
+			fillStyle: "green",
+			strokeStyle: "green",
+			lineCap: "round",
+			rotate: 40
+		}).drawEllipse({
+			center: {
+				x: 400,
+				y: 400
+			},
+			a: 90,
+			b: 200,
+			angle: 130,
+			fillStyle: "green",
+			strokeStyle: "green",
+			lineCap: "round",
+			rotate: 40
+		})
+
+		window.myCanvas = myCanvas;
+	})()
+</script>
+</html>

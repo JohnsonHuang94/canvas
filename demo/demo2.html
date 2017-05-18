@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>snake</title>
+	<style>
+		html,body{
+			width: 100%;
+			height: 100%;
+		}
+		canvas{
+			display: block;
+			margin: 50px auto;
+			border: 1px solid #ccc;
+		}
+		.container{
+			width: 100%;
+			height: 100%;
+		}
+		.btn-con{
+			margin-top: 20px;
+			text-align: center;
+		}
+		.btn-con button{
+			width: 80px;
+			height: 30px;
+			background-color: #0944e6;
+			color: #fff;
+			border: none;
+			outline: none;
+			border-radius: 8px;
+			margin: 0 20px;
+		}
+		.score-con{
+			/*text-align: center;*/
+		}
+		#score{
+			color: red;
+			font-size: 16px;
+		}
+	</style>
+</head>
+<body>
+	<!-- <canvas id="snakeCanvas" width="500" height="500"></canvas> -->
+	<div class="container">
+		<div class="btn-con">
+			<button id="start" onclick="Snake.reStart()">开始游戏</button>
+			<button id="reStart" onclick="Snake.reStart()">重新开始</button>
+			<span class="score-con">
+				得分： <span id="score">0</span>
+			</span>
+
+		</div>
+	</div>
+</body>
+<script src="../src/snake.js"></script>
+<script>
+	(function(){
+		Snake.init(".container");
+
+	})()
+</script>
+</html>
